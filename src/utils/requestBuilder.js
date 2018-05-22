@@ -13,7 +13,7 @@ const requestBuilder = (
   return new Request(url, {
     method,
     headers: finalHeaders,
-    body: isObject(body) && !(body instanceof FormData) ? JSON.stringify(body) : body,
+    body: isObject(body) && !(body instanceof FormData || body instanceof File) ? JSON.stringify(body) : body,
   });
 };
 
